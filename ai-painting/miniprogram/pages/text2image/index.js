@@ -66,16 +66,39 @@ Page({
     });
   },
   showAd(callback) {
-    const adUnitId = 'your_ad_unit_id';
-    tt.createRewardedVideoAd({
-      adUnitId
-    }).then(ad => {
-      ad.onClose(() => callback());
-      ad.onError(() => {
+    // 激励视频广告
+    const rewardedVideoAd = tt.createRewardedVideoAd({
+      adUnitId: 'your_rewarded_video_ad_unit_id'
+    });
+
+    rewardedVideoAd.onClose((res) => {
+      if (res.isEnded) {
+        // 用户完整观看广告
+        callback(true);
+      } else {
+        tt.showToast({ title: '请完整观看广告', icon: 'none' });
+      }
+    });
+
+    rewardedVideoAd.onError(() => {
+      tt.showToast({ title: '广告加载失败', icon: 'none' });
+    });
+
+    rewardedVideoAd.load()
+      .then(() => rewardedVideoAd.show())
+      .catch(err => {
+        console.error('Ad load error:', err);
         tt.showToast({ title: '广告加载失败', icon: 'none' });
       });
-      ad.load().then(() => ad.show());
+  },
+  showInterstitialAd() {
+    const interstitialAd = tt.createInterstitialAd({
+      adUnitId: 'your_interstitial_ad_unit_id'
     });
+
+    interstitialAd.load()
+      .then(() => interstitialAd.show())
+      .catch(err => console.error('Interstitial ad error:', err));
   },
   async doLogin() {
     return new Promise((resolve) => {
