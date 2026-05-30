@@ -1,0 +1,5 @@
+node_modules/
+.cloudfunctions/
+.env
+*.log
+.DS_Store

@@ -1,0 +1,6 @@
+{
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "projectname": "ai-painting",
+  "appid": "your_appid_here"
+}
