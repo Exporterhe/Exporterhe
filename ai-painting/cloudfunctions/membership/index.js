@@ -22,6 +22,14 @@ const MEMBERSHIP_PLANS = {
 exports.main = async (event, context) => {
   const { action, openid, planType } = event;
 
+  // 安全注意: 生产环境中 openid 应从 cloud.getUserContext() 获取
+  // 此处暂时信任客户端传入的 openid，建议后续改为:
+  // const userContext = cloud.getUserContext();
+  // const openid = userContext.openid;
+  if (!openid) {
+    return { error: 'openid 不能为空' };
+  }
+
   switch (action) {
     case 'getMembership':
       return await getMembership(openid);

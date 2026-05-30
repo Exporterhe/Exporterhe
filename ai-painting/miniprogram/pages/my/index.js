@@ -23,14 +23,12 @@ Page({
     });
   },
   openMember() {
-    tt.navigateTo({
-      url: '/pages/member/index'
-    });
+    // TODO: 后续实现会员页面后再启用
+    tt.showToast({ title: '会员功能即将上线', icon: 'none' });
   },
   viewHistory() {
-    tt.navigateTo({
-      url: '/pages/history/index'
-    });
+    // TODO: 后续实现历史记录页面后再启用
+    tt.showToast({ title: '历史记录即将上线', icon: 'none' });
   },
   contactService() {
     tt.makePhoneCall({

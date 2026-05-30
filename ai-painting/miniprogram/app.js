@@ -6,7 +6,8 @@ App({
   globalData: {
     userInfo: null,
     isMember: false,
-    memberExpireTime: null
+    memberExpireTime: null,
+    remainCount: 0
   },
   checkLoginStatus() {
     const token = tt.getStorageSync('token');
@@ -16,6 +17,24 @@ App({
     }
   },
   validateToken(token) {
-    // 调用云函数验证
+    // 验证 token 有效性，如果无效则清除
+    tt.cloud.callFunction({
+      name: 'login',
+      data: { token: token },
+      success: (res) => {
+        if (res.data && res.data.openid) {
+          this.globalData.userInfo = res.data;
+          this.globalData.isMember = res.data.isMember;
+          this.globalData.memberExpireTime = res.data.memberExpireTime;
+        } else {
+          // token 无效，清除
+          tt.removeStorageSync('token');
+        }
+      },
+      fail: () => {
+        // 验证失败，清除 token
+        tt.removeStorageSync('token');
+      }
+    });
   }
 });
