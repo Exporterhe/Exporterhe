@@ -1,0 +1,7 @@
+{
+  "name": "membership",
+  "version": "1.0.0",
+  "dependencies": {
+    "tt-cloud-sdk": "^1.0.0"
+  }
+}
