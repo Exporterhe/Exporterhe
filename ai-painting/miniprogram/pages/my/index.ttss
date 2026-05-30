@@ -1,0 +1,135 @@
+.container {
+  min-height: 100vh;
+  background: #F5F5F5;
+}
+
+.user-card {
+  background: linear-gradient(135deg, #FF6B9D 0%, #FF8E53 100%);
+  padding: 48rpx 32rpx;
+}
+
+.avatar-section {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.5);
+}
+
+.user-info {
+  margin-left: 24rpx;
+}
+
+.nickname {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+  display: block;
+}
+
+.member-tag {
+  font-size: 22rpx;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+  margin-top: 8rpx;
+  display: inline-block;
+}
+
+.member-tag.normal {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.member-banner {
+  background: #FFFFFF;
+  margin: 24rpx;
+  border-radius: 16rpx;
+  padding: 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333333;
+  display: block;
+}
+
+.banner-desc {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 8rpx;
+  display: block;
+}
+
+.banner-btn {
+  background: linear-gradient(135deg, #FF6B9D 0%, #FF8E53 100%);
+  color: #FFFFFF;
+  padding: 16rpx 32rpx;
+  border-radius: 32rpx;
+  font-size: 26rpx;
+}
+
+.member-info {
+  background: #FFFFFF;
+  margin: 24rpx;
+  border-radius: 16rpx;
+  padding: 32rpx;
+}
+
+.member-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid #F5F5F5;
+}
+
+.member-item:last-child {
+  border-bottom: none;
+}
+
+.item-label {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.item-value {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.menu-list {
+  background: #FFFFFF;
+  margin: 24rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32rpx;
+  border-bottom: 1rpx solid #F5F5F5;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-text {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.menu-arrow {
+  font-size: 28rpx;
+  color: #CCCCCC;
+}

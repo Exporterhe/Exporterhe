@@ -1,0 +1,46 @@
+<view class="container">
+  <view class="user-card">
+    <view class="avatar-section">
+      <image class="avatar" src="{{userInfo.avatar || '/assets/default-avatar.png'}}" />
+      <view class="user-info">
+        <text class="nickname">{{userInfo.nickname || '游客'}}</text>
+        <text class="member-tag" tt:if="{{isMember}}">会员</text>
+        <text class="member-tag normal" tt:else>普通用户</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="member-banner" tt:if="{{!isMember}}" bindtap="openMember">
+    <view class="banner-content">
+      <text class="banner-title">开通会员</text>
+      <text class="banner-desc">广告免费 · 无限生成 · MJ 高质量</text>
+    </view>
+    <text class="banner-btn">立即开通</text>
+  </view>
+
+  <view class="member-info" tt:else>
+    <view class="member-item">
+      <text class="item-label">会员到期时间</text>
+      <text class="item-value">{{memberExpireTime}}</text>
+    </view>
+    <view class="member-item">
+      <text class="item-label">剩余生成次数</text>
+      <text class="item-value">{{remainCount}}</text>
+    </view>
+  </view>
+
+  <view class="menu-list">
+    <view class="menu-item" bindtap="viewHistory">
+      <text class="menu-text">生成记录</text>
+      <text class="menu-arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="openMember">
+      <text class="menu-text">会员中心</text>
+      <text class="menu-arrow">></text>
+    </view>
+    <view class="menu-item" bindtap="contactService">
+      <text class="menu-text">联系客服</text>
+      <text class="menu-arrow">></text>
+    </view>
+  </view>
+</view>
